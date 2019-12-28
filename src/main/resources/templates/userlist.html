@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>listado de usuarios</title>
+<!-- Bootrstrap -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+ integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+  crossorigin="anonymous"/>
+</head>
+<body>
+	<div class="container mt-5">
+		<h4 class="text-center">Listado de usuarios</h4>
+		<table class="table text-center">
+			<thead>
+				<tr>
+					<th>Nombre</th>
+					<th>Email</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr th:each="user : ${users}">
+					<td th:text="${user.nombre}"></td>
+					<td th:text="${user.email}"></td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<br>
+		
+		<nav th:replace="paginator-nav :: paginator"></nav>
+		
+		
+	</div>
+
+	
+
+
+</body>
+</html>
